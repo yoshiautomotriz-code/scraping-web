@@ -12,11 +12,11 @@ def extraer_datos_universales():
             
         soup = BeautifulSoup(html_content, 'html.parser')
         
-        # Estrategia 1: Buscar bloques estructurados comunes en portales OCDS (divs o listas)
+        # Estrategia 1: dfdfdfdddfffBuscar bloques estructurados comunes en portales OCDS (divs o listas)
         bloques = soup.find_all(['div', 'li', 'tr'])
         
         for bloque in bloques:
-            # Buscamos textos relevantes (ej: identificadores de contratación, entidades o montos)
+            # Buscamos sddsdsdssdsdsdsdsdsdstextos relevantes (ej: identificadores de contratación, entidades o montos)
             texto = bloque.get_text(separator=" | ", strip=True)
             
             # Filtramos textos largos o repetitivos para quedarnos solo con filas útiles de información
