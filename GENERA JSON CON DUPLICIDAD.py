@@ -1,100 +1,62 @@
-from bs4 import BeautifulSoup
-import pandas as pd
+"""
+Extractor Limpio de Contrataciones Abiertas (OECE / OSCE Perú)
+Reemplazo optimizado para 'GENERA JSON CON DUPLICIDAD.py'
+
+Anteriormente este script intentaba leer bloques de un archivo HTML local ('pagina.html'),
+lo que generaba:
+1. Cientos de duplicados debido a etiquetas anidadas (div, li, tr).
+2. Textos no estructurados unidos con plecas (" | ") sin nombres de campos.
+3. Fallos al no encontrar 'pagina.html' o cuando la página Angular cargaba vacío.
+
+Esta versión actualizada se conecta directamente a la API oficial de Contrataciones Abiertas:
+https://contratacionesabiertas.oece.gob.pe/api/v1/search?search={termino}
+Obtiene datos 100% oficiales, elimina duplicados automáticamente por 'ocid' y genera un JSON
+completamente estructurado con montos, fechas, entidades y enlaces directos al portal.
+"""
+
+import sys
+import os
 import json
+from scraper_oece import buscar_contrataciones, exportar_resultados
 
-def extraer_datos_universales():
-    print("Analizando estructura de 'pagina.html'...")
-    datos_limpios = []
+def ejecutar_extraccion(palabras=None, anio=None, limite=50):
+    if palabras is None:
+        palabras = ["firewall", "antispam"]
+        
+    print("=" * 65)
+    print(" EXTRACCIÓN Y LIMPIEZA DE CONTRATACIONES OECE")
+    print("=" * 65)
     
-    try:
-        with open('pagina.html', 'r', encoding='utf-8') as f:
-            html_content = f.read()
-            
-        soup = BeautifulSoup(html_content, 'html.parser')
-        
-        # Estrategia 1: dfdfdfdddfffBuscar bloques estructurados comunes en portales OCDS (divs o listas)
-        bloques = soup.find_all(['div', 'li', 'tr'])
-        
-        for bloque in bloques:
-            # Buscamos sddsdsdssdsdsdsdsdsdstextos relevantes (ej: identificadores de contratación, entidades o montos)
-            texto = bloque.get_text(separator=" | ", strip=True)
-            
-            # Filtramos textos largos o repetitivos para quedarnos solo con filas útiles de información
-            if len(texto) > 15 and len(texto) < 600 and ('S/.' in texto or 'Convocatoria' in texto or '2026' in texto):
-                # Intentamos extraer un enlace del proceso si existe
-                enlace_tag = bloque.find('a', href=True)
-                
-                if enlace_tag:
-                    href = enlace_tag['href']
-                    # Si el enlace ya empieza con http, lo dejamos tal cual.
-                    enlace = href if href.startswith('http') else f"https://contratacionesabiertas.oece.gob.pe{href if href.startswith('/') else '/' + href}"
-                else:
-                    enlace = "N/A"
-                
-                datos_limpios.append({
-                    'informacion_detallada': texto,
-                    'enlace_directo': enlace
-                })
-        
-        # Eliminar duplicados generados por elementos anidados
-        df = pd.DataFrame(datos_limpios).drop_duplicates(subset=['informacion_detallada'])
-        
-        if not df.empty:
-            # 1. Guardar en Excel (como ya lo tenías)
-            nombre_excel = "registros_contrataciones_2026.xlsx"
-            df.to_excel(nombre_excel, index=False)
-            
-            # 2. GENERAR CADENA JSON
-            # orient='records' genera una lista de diccionarios (ideal para APIs y bases de datos)
-            # force_ascii=False mantiene los caracteres en español (tildes, ñ)
-            cadena_json = df.to_json(orient='records', force_ascii=False, indent=4)
-            
-            # 3. Guardar también en un archivo .json por si lo necesitas
-            nombre_json = "registros_contrataciones_2026.json"
-            with open(nombre_json, 'w', encoding='utf-8') as f_json:
-                f_json.write(cadena_json)
-                
-            print(f"\n¡Éxito total! Se encontraron {len(df)} filas con información.")
-            print(f"Los datos se han guardado en: '{nombre_excel}' y '{nombre_json}'")
-            print("\n--- MUESTRA DE LA CADENA JSON GENERADA ---")
-            print(cadena_json[:500] + "\n... [continúa]") # Muestra solo los primeros 500 caracteres
-            
-            # Si necesitas retornar la cadena para usarla en otra función:
-            return cadena_json
-
-        else:
-            # Estrategia alternativa si todo falla
-            print("Aplicando estrategia secundaria: Extracción por enlaces activos...")
-            enlaces_directos = []
-            for a in soup.find_all('a', href=True):
-                texto_enlace = a.get_text(strip=True)
-                if len(texto_enlace) > 10:
-                    enlaces_directos.append({
-                        'descripcion': texto_enlace,
-                        'url_proceso': f"https://contratacionesabiertas.oece.gob.pe{a['href']}" if a['href'].startswith('/') else a['href']
-                    })
-            
-            df_alt = pd.DataFrame(enlaces_directos).drop_duplicates()
-            if not df_alt.empty:
-                df_alt.to_excel("enlaces_contrataciones.xlsx", index=False)
-                
-                # Generar JSON para la estrategia alternativa
-                cadena_json_alt = df_alt.to_json(orient='records', force_ascii=False, indent=4)
-                with open("enlaces_contrataciones.json", 'w', encoding='utf-8') as f_json:
-                    f_json.write(cadena_json_alt)
-                    
-                print(f"Extracción completada. Se generó 'enlaces_contrataciones.xlsx' y '.json' con {len(df_alt)} registros.")
-                return cadena_json_alt
-            else:
-                print("No se encontraron elementos legibles. Asegúrate de que guardaste el archivo completo con resultados visibles.")
-                return None
-
-    except FileNotFoundError:
-        print("Error: No se encontró el archivo 'pagina.html'. Súbelo de nuevo a la carpeta raíz.")
+    # Realizar búsqueda limpia y estructurada
+    registros = buscar_contrataciones(
+        palabras_clave=palabras,
+        anio=anio,
+        limite_por_palabra=limite
+    )
+    
+    if not registros:
+        print("[!] No se encontraron registros para los criterios indicados.")
         return None
-    except Exception as e:
-        print(f"Ocurrió un error inesperado durante el análisis: {e}")
-        return None
+        
+    # Exportar con nombres estándar y nombres de retrocompatibilidad
+    exportar_resultados(registros, "contrataciones_oece")
+    
+    # Retrocompatibilidad con los nombres que ya usaba tu script
+    json_legacy = "registros_contrataciones_2026.json"
+    with open(json_legacy, "w", encoding="utf-8") as f:
+        json.dump(registros, f, indent=4, ensure_ascii=False)
+    print(f" Archivo JSON compatible generado: '{json_legacy}'")
+    
+    # Generar muestra en consola
+    cadena_json = json.dumps(registros[:3], indent=4, ensure_ascii=False)
+    print("\n--- MUESTRA DE DATOS ESTRUCTURADOS GENERADOS (PRIMEROS 3) ---")
+    print(cadena_json)
+    print(f"\n[OK] ¡Éxito! Se procesaron {len(registros)} contrataciones estructuradas.")
+    print(" Puedes abrir 'index.html' en tu navegador para ver la información en tarjetas interactivas.")
+    
+    return registros
 
 if __name__ == "__main__":
-    json_resultante = extraer_datos_universales()
+    # Puedes pasar términos por consola o usar los predeterminados: firewall, antispam
+    terminos = sys.argv[1:] if len(sys.argv) > 1 else ["firewall", "antispam"]
+    ejecutar_extraccion(palabras=terminos)

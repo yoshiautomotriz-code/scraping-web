@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Contrataciones OECE | Buscador TI</title>
+  <meta name="description" content="Tablero visual interactivo para explorar contrataciones de tecnología (Firewall, Antispam, Ciberseguridad) del portal de Contrataciones Abiertas OECE Perú.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-main: #0a0d14;
+      --bg-card: rgba(18, 24, 38, 0.85);
+      --bg-card-hover: rgba(26, 35, 56, 0.95);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(56, 189, 248, 0.35);
+      
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      
+      --cyan: #38bdf8;
+      --cyan-glow: rgba(56, 189, 248, 0.2);
+      --purple: #a855f7;
+      --purple-glow: rgba(168, 85, 247, 0.2);
+      --emerald: #10b981;
+      --emerald-glow: rgba(16, 185, 129, 0.2);
+      --amber: #f59e0b;
+      
+      --gradient-cyan: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+      --gradient-purple: linear-gradient(135deg, #c084fc 0%, #7c3aed 100%);
+      --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+      --shadow-hover: 0 20px 35px -5px rgba(14, 165, 233, 0.15), 0 10px 15px -5px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.15), transparent),
+        radial-gradient(ellipse 60% 40% at 85% 60%, rgba(168, 85, 247, 0.08), transparent);
+      background-attachment: fixed;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-main);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: var(--radius-full);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .brand-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      box-shadow: 0 0 20px var(--cyan-glow);
+    }
+
+    .brand-text h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(to right, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-text p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: 0.2rem;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.15rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      border: 1px solid transparent;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary);
+      border-color: var(--border-color);
+      backdrop-filter: blur(10px);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--gradient-cyan);
+      color: #04121e;
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+    }
+    .btn-primary:hover {
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+      transform: translateY(-1px);
+    }
+
+    /* KPI STATS CARDS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--stat-accent, var(--cyan));
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .stat-value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-sub {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 0.35rem;
+    }
+
+    /* CONTROLS & FILTER SECTION */
+    .controls-wrapper {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .search-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 280px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      background: rgba(10, 13, 20, 0.7);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem 0.75rem 2.75rem;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+    .search-box input:focus {
+      outline: none;
+      border-color: var(--cyan);
+      box-shadow: 0 0 12px var(--cyan-glow);
+    }
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 1rem;
+      pointer-events: none;
+    }
+
+    .filter-selects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .custom-select {
+      background: rgba(10, 13, 20, 0.7);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.875rem;
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .custom-select:focus {
+      border-color: var(--cyan);
+    }
+
+    .tag-filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      padding-top: 0.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .tag-filter-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+
+    .tag-pill {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .tag-pill:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+    .tag-pill.active {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--cyan);
+      border-color: rgba(56, 189, 248, 0.4);
+      font-weight: 600;
+      box-shadow: 0 0 10px var(--cyan-glow);
+    }
+
+    /* RESULTS HEADER */
+    .results-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .results-count b {
+      color: var(--cyan);
+    }
+
+    /* CARDS GRID ("CUADRADOS") */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* CARD STYLING */
+    .tender-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .tender-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: var(--radius-md);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+      pointer-events: none;
+    }
+
+    .tender-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-glow);
+      box-shadow: var(--shadow-hover);
+      background: var(--bg-card-hover);
+    }
+
+    /* Card Badges Row */
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .badges-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .badge-keyword {
+      background: rgba(56, 189, 248, 0.12);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .badge-keyword.antispam {
+      background: rgba(168, 85, 247, 0.12);
+      color: #c084fc;
+      border-color: rgba(168, 85, 247, 0.3);
+    }
+
+    .badge-year {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .badge-year.recent {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    .source-tag {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      white-space: nowrap;
+    }
+
+    /* Card Title */
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #ffffff;
+      margin-bottom: 0.6rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      word-break: break-word;
+    }
+
+    /* Entity Box */
+    .card-entity {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      margin-bottom: 0.85rem;
+      padding: 0.5rem 0.65rem;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+    .card-entity span {
+      flex: 1;
+      line-height: 1.3;
+      font-weight: 500;
+    }
+    .entity-icon {
+      color: var(--amber);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Card Description */
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex-grow: 1;
+    }
+
+    /* Financial & Details Grid */
+    .card-specs {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem;
+      margin-bottom: 1.25rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .spec-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.2rem;
+    }
+    .spec-value {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .spec-value.amount {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #38bdf8;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* Card Footer Action */
+    .card-footer {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .card-footer .btn {
+      flex: 1;
+      justify-content: center;
+      padding: 0.6rem;
+      font-size: 0.85rem;
+    }
+
+    .btn-copy {
+      padding: 0.6rem;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-copy:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* EMPTY STATE */
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: var(--bg-card);
+      border: 1px dashed var(--border-color);
+      border-radius: var(--radius-lg);
+    }
+    .empty-state-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      opacity: 0.7;
+    }
+    .empty-state h3 {
+      font-size: 1.25rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+    .empty-state p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      max-width: 450px;
+      margin: 0 auto;
+    }
+
+    /* TOAST NOTIFICATION */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #1e293b;
+      color: #ffffff;
+      padding: 0.85rem 1.25rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--cyan);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 9999;
+    }
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* HIDDEN FILE INPUT */
+    #fileInput {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem 1rem 3rem;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- HEADER -->
+    <header>
+      <div class="brand-group">
+        <div class="brand-icon">🛡️</div>
+        <div class="brand-text">
+          <h1>Contrataciones TI | OECE Perú</h1>
+          <p>Explorador estructurado de convocatorias (Firewall, Antispam, Infraestructura de Red)</p>
+        </div>
+      </div>
+      
+      <div class="header-actions">
+        <input type="file" id="fileInput" accept=".json">
+        <button class="btn btn-secondary" id="btnUpload" title="Cargar archivo JSON exportado por el scraper">
+          <span>📁</span> Cargar JSON
+        </button>
+        <button class="btn btn-primary" id="btnDownloadJson" title="Descargar datos en JSON">
+          <span>⬇</span> Exportar JSON
+        </button>
+      </div>
+    </header>
+
+    <!-- KPI STATS CARDS -->
+    <section class="stats-grid" id="statsGrid">
+      <div class="stat-card" style="--stat-accent: var(--cyan);">
+        <div class="stat-label">
+          <span>Total Convocatorias</span>
+          <span>📋</span>
+        </div>
+        <div class="stat-value" id="kpiTotal">0</div>
+        <div class="stat-sub">Procesos únicos cargados</div>
+      </div>
+
+      <div class="stat-card" style="--stat-accent: var(--emerald);">
+        <div class="stat-label">
+          <span>Monto Total Estimado</span>
+          <span>💰</span>
+        </div>
+        <div class="stat-value" id="kpiMonto">S/. 0.00</div>
+        <div class="stat-sub">Valor referencial en Soles</div>
+      </div>
+
+      <div class="stat-card" style="--stat-accent: var(--purple);">
+        <div class="stat-label">
+          <span>Entidades Compradoras</span>
+          <span>🏛️</span>
+        </div>
+        <div class="stat-value" id="kpiEntidades">0</div>
+        <div class="stat-sub">Instituciones del Estado</div>
+      </div>
+
+      <div class="stat-card" style="--stat-accent: var(--amber);">
+        <div class="stat-label">
+          <span>Año Más Reciente</span>
+          <span>📅</span>
+        </div>
+        <div class="stat-value" id="kpiAnio">2026</div>
+        <div class="stat-sub">Vigencia de procesos</div>
+      </div>
+    </section>
+
+    <!-- CONTROLS & FILTERS -->
+    <section class="controls-wrapper">
+      <div class="search-row">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" placeholder="Buscar por título, entidad compradora, código OCID o descripción...">
+        </div>
+
+        <div class="filter-selects">
+          <select class="custom-select" id="yearSelect">
+            <option value="ALL">Todos los Años</option>
+          </select>
+
+          <select class="custom-select" id="methodSelect">
+            <option value="ALL">Todos los Métodos</option>
+          </select>
+
+          <select class="custom-select" id="sortSelect">
+            <option value="date_desc">📅 Más recientes primero</option>
+            <option value="date_asc">📅 Más antiguos primero</option>
+            <option value="amount_desc">💵 Mayor monto</option>
+            <option value="amount_asc">💵 Menor monto</option>
+            <option value="title_asc">🔤 Título A-Z</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Quick Tag Filter Pills -->
+      <div class="tag-filter-row" id="tagPillsContainer">
+        <span class="tag-filter-label">Filtrar por:</span>
+        <span class="tag-pill active" data-kw="ALL">Todos</span>
+        <!-- Dinámicamente se agregan palabras clave como firewall, antispam -->
+      </div>
+    </section>
+
+    <!-- RESULTS SUMMARY -->
+    <div class="results-meta">
+      <div class="results-count">
+        Mostrando <b id="filteredCount">0</b> de <span id="totalAvailableCount">0</span> contrataciones
+      </div>
+      <div id="activeFilterNotice"></div>
+    </div>
+
+    <!-- CARDS GRID ("CUADRADOS") -->
+    <main class="cards-grid" id="cardsGrid">
+      <!-- Inserción dinámica de tarjetas -->
+    </main>
+
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast">
+    <span id="toastIcon">📋</span>
+    <span id="toastMsg">Enlace copiado al portapapeles</span>
+  </div>
+
+  <!-- Carga de datos pre-exportados por el scraper (si existe) -->
+  <script src="contrataciones_data.js"></script>
+
+  <script>
+    // ESTADO DE LA APLICACIÓN
+    let dataset = [];
+    let activeKeyword = 'ALL';
+    let activeYear = 'ALL';
+    let activeMethod = 'ALL';
+    let searchQuery = '';
+    let activeSort = 'date_desc';
+
+    // ELEMENTOS DOM
+    const cardsGrid = document.getElementById('cardsGrid');
+    const searchInput = document.getElementById('searchInput');
+    const yearSelect = document.getElementById('yearSelect');
+    const methodSelect = document.getElementById('methodSelect');
+    const sortSelect = document.getElementById('sortSelect');
+    const tagPillsContainer = document.getElementById('tagPillsContainer');
+    const filteredCountEl = document.getElementById('filteredCount');
+    const totalAvailableCountEl = document.getElementById('totalAvailableCount');
+    const fileInput = document.getElementById('fileInput');
+    const btnUpload = document.getElementById('btnUpload');
+    const btnDownloadJson = document.getElementById('btnDownloadJson');
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+
+    // KPIS
+    const kpiTotal = document.getElementById('kpiTotal');
+    const kpiMonto = document.getElementById('kpiMonto');
+    const kpiEntidades = document.getElementById('kpiEntidades');
+    const kpiAnio = document.getElementById('kpiAnio');
+
+    // INICIALIZACIÓN
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Intentar cargar datos desde contrataciones_data.js (variable window.CONTRATACIONES_DATA)
+      if (window.CONTRATACIONES_DATA && Array.isArray(window.CONTRATACIONES_DATA) && window.CONTRATACIONES_DATA.length > 0) {
+        cargarDatos(window.CONTRATACIONES_DATA);
+      } else {
+        // 2. Si no está en window, intentar cargar contrataciones_oece.json por fetch
+        fetch('contrataciones_oece.json')
+          .then(res => res.json())
+          .then(data => cargarDatos(data))
+          .catch(() => {
+            // 3. Fallback con muestra ilustrativa si aún no ha corrido el script
+            mostrarEstadoVacio("No se cargaron datos automáticamente. Haz clic en 'Cargar JSON' o ejecuta 'python scraper_oece.py' en tu terminal.");
+          });
+      }
+
+      // Eventos de controles
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase().trim();
+        render();
+      });
+
+      yearSelect.addEventListener('change', (e) => {
+        activeYear = e.target.value;
+        render();
+      });
+
+      methodSelect.addEventListener('change', (e) => {
+        activeMethod = e.target.value;
+        render();
+      });
+
+      sortSelect.addEventListener('change', (e) => {
+        activeSort = e.target.value;
+        render();
+      });
+
+      btnUpload.addEventListener('click', () => fileInput.click());
+
+      fileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          try {
+            const parsed = JSON.parse(event.target.result);
+            if (Array.isArray(parsed)) {
+              cargarDatos(parsed);
+              showToast("Archivo JSON cargado exitosamente", "✅");
+            } else {
+              alert("El archivo JSON debe contener un arreglo de registros.");
+            }
+          } catch (err) {
+            alert("Error al leer el archivo JSON: " + err.message);
+          }
+        };
+        reader.readAsText(file);
+      });
+
+      btnDownloadJson.addEventListener('click', () => {
+        if (!dataset.length) {
+          showToast("No hay datos para exportar", "⚠️");
+          return;
+        }
+        const blob = new Blob([JSON.stringify(dataset, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `contrataciones_oece_${new Date().toISOString().slice(0, 10)}.json`;
+        a.click();
+        URL.revokeObjectURL(url);
+        showToast("Descarga de JSON iniciada", "💾");
+      });
+    });
+
+    // CARGAR Y NORMALIZAR DATASET
+    function cargarDatos(data) {
+      dataset = data;
+      actualizarFiltrosDinamicos();
+      actualizarKPIs();
+      render();
+    }
+
+    // ACTUALIZAR SELECTS Y TAGS
+    function actualizarFiltrosDinamicos() {
+      // Años
+      const anios = Array.from(new Set(dataset.map(d => d.anio).filter(Boolean))).sort((a, b) => b - a);
+      yearSelect.innerHTML = '<option value="ALL">Todos los Años</option>' + 
+        anios.map(a => `<option value="${a}">${a}</option>`).join('');
+
+      // Métodos de procedimiento
+      const metodos = Array.from(new Set(dataset.map(d => d.metodo).filter(Boolean))).sort();
+      methodSelect.innerHTML = '<option value="ALL">Todos los Métodos</option>' + 
+        metodos.map(m => `<option value="${escapeHtml(m)}">${escapeHtml(m)}</option>`).join('');
+
+      // Palabras clave únicas
+      const palabras = new Set();
+      dataset.forEach(d => {
+        if (Array.isArray(d.palabras_clave)) {
+          d.palabras_clave.forEach(p => palabras.add(p.toLowerCase()));
+        }
+      });
+
+      tagPillsContainer.innerHTML = '<span class="tag-filter-label">Palabra clave:</span><span class="tag-pill active" data-kw="ALL">Todos</span>';
+      palabras.forEach(palabra => {
+        const pill = document.createElement('span');
+        pill.className = 'tag-pill';
+        pill.dataset.kw = palabra;
+        pill.textContent = '#' + palabra;
+        pill.addEventListener('click', () => {
+          document.querySelectorAll('.tag-pill').forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          activeKeyword = palabra;
+          render();
+        });
+        tagPillsContainer.appendChild(pill);
+      });
+
+      // Click evento para "Todos"
+      tagPillsContainer.querySelector('[data-kw="ALL"]').addEventListener('click', function() {
+        document.querySelectorAll('.tag-pill').forEach(p => p.classList.remove('active'));
+        this.classList.add('active');
+        activeKeyword = 'ALL';
+        render();
+      });
+    }
+
+    // CALCULAR Y ACTUALIZAR KPIS
+    function actualizarKPIs() {
+      if (!dataset.length) return;
+      
+      kpiTotal.textContent = dataset.length.toLocaleString();
+
+      // Monto total en Soles (PEN)
+      let sumaSoles = 0;
+      dataset.forEach(d => {
+        if (d.monto && d.moneda === 'PEN') {
+          sumaSoles += parseFloat(d.monto);
+        }
+      });
+      kpiMonto.textContent = 'S/. ' + sumaSoles.toLocaleString('es-PE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+      // Entidades únicas
+      const entidadesSet = new Set(dataset.map(d => d.entidad).filter(Boolean));
+      kpiEntidades.textContent = entidadesSet.size.toLocaleString();
+
+      // Año más reciente
+      const anios = dataset.map(d => d.anio).filter(Boolean);
+      const maxAnio = anios.length ? Math.max(...anios) : 'N/A';
+      kpiAnio.textContent = maxAnio;
+    }
+
+    // FILTRADO Y ORDENACIÓN
+    function obtenerRegistrosFiltrados() {
+      let filtered = dataset.filter(item => {
+        // Filtro por palabra clave
+        if (activeKeyword !== 'ALL') {
+          const kws = Array.isArray(item.palabras_clave) ? item.palabras_clave.map(k => k.toLowerCase()) : [];
+          if (!kws.includes(activeKeyword.toLowerCase())) return false;
+        }
+
+        // Filtro por año
+        if (activeYear !== 'ALL') {
+          if (String(item.anio) !== String(activeYear)) return false;
+        }
+
+        // Filtro por método
+        if (activeMethod !== 'ALL') {
+          if (item.metodo !== activeMethod) return false;
+        }
+
+        // Búsqueda de texto libre
+        if (searchQuery) {
+          const haystack = `${item.titulo} ${item.descripcion} ${item.entidad} ${item.ocid} ${item.id_licitacion}`.toLowerCase();
+          if (!haystack.includes(searchQuery)) return false;
+        }
+
+        return true;
+      });
+
+      // Ordenación
+      filtered.sort((a, b) => {
+        if (activeSort === 'date_desc') {
+          return (b.anio || 0) - (a.anio || 0) || (b.fecha_publicacion || '').localeCompare(a.fecha_publicacion || '');
+        } else if (activeSort === 'date_asc') {
+          return (a.anio || 0) - (b.anio || 0) || (a.fecha_publicacion || '').localeCompare(b.fecha_publicacion || '');
+        } else if (activeSort === 'amount_desc') {
+          return (b.monto || 0) - (a.monto || 0);
+        } else if (activeSort === 'amount_asc') {
+          return (a.monto || 0) - (b.monto || 0);
+        } else if (activeSort === 'title_asc') {
+          return (a.titulo || '').localeCompare(b.titulo || '');
+        }
+        return 0;
+      });
+
+      return filtered;
+    }
+
+    // RENDERIZAR TARJETAS ("CUADRADOS")
+    function render() {
+      const items = obtenerRegistrosFiltrados();
+
+      filteredCountEl.textContent = items.length;
+      totalAvailableCountEl.textContent = dataset.length;
+
+      if (items.length === 0) {
+        mostrarEstadoVacio("No se encontraron contrataciones que coincidan con los filtros seleccionados.");
+        return;
+      }
+
+      cardsGrid.innerHTML = items.map(item => crearTarjetaHTML(item)).join('');
+    }
+
+    // PLANTILLA DE CADA CUADRADO (CARD)
+    function crearTarjetaHTML(item) {
+      const esReciente = item.anio >= 2025;
+      const palabras = Array.isArray(item.palabras_clave) ? item.palabras_clave : ['ti'];
+      
+      const badgeKeywordsHTML = palabras.map(kw => {
+        const isAntispam = kw.toLowerCase().includes('antispam');
+        return `<span class="badge badge-keyword ${isAntispam ? 'antispam' : ''}">#${escapeHtml(kw)}</span>`;
+      }).join('');
+
+      const anioBadge = item.anio ? 
+        `<span class="badge badge-year ${esReciente ? 'recent' : ''}">${item.anio}</span>` : '';
+
+      return `
+        <article class="tender-card">
+          <!-- CABECERA DE LA TARJETA -->
+          <div class="card-top">
+            <div class="badges-group">
+              ${badgeKeywordsHTML}
+              ${anioBadge}
+            </div>
+            <div class="source-tag">${escapeHtml(item.sistema || 'SEACE')}</div>
+          </div>
+
+          <!-- TÍTULO / NOMENCLATURA -->
+          <h2 class="card-title" title="${escapeHtml(item.titulo)}">
+            ${escapeHtml(item.titulo)}
+          </h2>
+
+          <!-- ENTIDAD COMPRADORA -->
+          <div class="card-entity">
+            <span class="entity-icon">🏛️</span>
+            <span>${escapeHtml(item.entidad || 'Entidad no identificada')}</span>
+          </div>
+
+          <!-- DESCRIPCIÓN -->
+          <p class="card-desc" title="${escapeHtml(item.descripcion)}">
+            ${escapeHtml(item.descripcion)}
+          </p>
+
+          <!-- ESPECIFICACIONES Y MONTO -->
+          <div class="card-specs">
+            <div class="spec-item">
+              <span class="spec-label">Monto Estimado</span>
+              <span class="spec-value amount">${escapeHtml(item.monto_formateado || 'S/. 0.00')}</span>
+            </div>
+
+            <div class="spec-item">
+              <span class="spec-label">Fecha Convocatoria</span>
+              <span class="spec-value">${escapeHtml(item.fecha_publicacion || 'N/A')}</span>
+            </div>
+
+            <div class="spec-item" style="grid-column: span 2;">
+              <span class="spec-label">Procedimiento</span>
+              <span class="spec-value">${escapeHtml(item.metodo || 'No especificado')}</span>
+            </div>
+          </div>
+
+          <!-- ACCIONES DE LA TARJETA -->
+          <div class="card-footer">
+            <a href="${escapeHtml(item.enlace_proceso)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <span>Ver en OECE</span>
+              <span>↗</span>
+            </a>
+            <button class="btn-copy" onclick="copiarOCID('${escapeHtml(item.ocid)}')" title="Copiar identificador OCID">
+              <span>📋</span>
+            </button>
+          </div>
+        </article>
+      `;
+    }
+
+    function mostrarEstadoVacio(mensaje) {
+      cardsGrid.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-state-icon">🔎</div>
+          <h3>Sin resultados</h3>
+          <p>${escapeHtml(mensaje)}</p>
+        </div>
+      `;
+    }
+
+    function copiarOCID(ocid) {
+      navigator.clipboard.writeText(ocid).then(() => {
+        showToast(`OCID copiado: ${ocid}`, "📋");
+      }).catch(() => {
+        showToast("No se pudo copiar al portapapeles", "❌");
+      });
+    }
+
+    function showToast(mensaje, icon = "📋") {
+      toastMsg.textContent = mensaje;
+      document.getElementById('toastIcon').textContent = icon;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2800);
+    }
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      return String(text)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+  </script>
+</body>
+</html>
