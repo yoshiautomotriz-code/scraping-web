@@ -230,6 +230,149 @@
       margin-top: 0.35rem;
     }
 
+    /* LIVE SCRAPER SEARCH PANEL */
+    .live-search-panel {
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(30, 41, 59, 0.7) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+    }
+
+    .live-search-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .live-search-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .live-search-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .live-search-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .live-search-input-wrap {
+      flex: 1;
+      min-width: 260px;
+      position: relative;
+    }
+
+    .live-search-input-wrap input {
+      width: 100%;
+      background: rgba(10, 13, 20, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem 0.85rem 2.75rem;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+    }
+
+    .live-search-input-wrap input:focus {
+      outline: none;
+      border-color: var(--cyan);
+      box-shadow: 0 0 16px var(--cyan-glow);
+    }
+
+    .live-search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--cyan);
+      font-size: 1.1rem;
+      pointer-events: none;
+    }
+
+    .btn-scraper {
+      background: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 100%);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px var(--cyan-glow);
+      white-space: nowrap;
+    }
+
+    .btn-scraper:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+    }
+
+    .btn-scraper:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .scraper-status {
+      display: none;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .scraper-status.loading {
+      display: flex;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--cyan);
+    }
+
+    .scraper-status.error {
+      display: flex;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #f87171;
+    }
+
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(56, 189, 248, 0.3);
+      border-top-color: var(--cyan);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
     /* CONTROLS & FILTER SECTION */
     .controls-wrapper {
       background: var(--bg-card);
@@ -679,6 +822,37 @@
       </div>
     </header>
 
+    <!-- PANEL DE BÚSQUEDA EN VIVO (SCRAPER) -->
+    <section class="live-search-panel">
+      <div class="live-search-header">
+        <div class="live-search-title">
+          <span>⚡</span> Buscador Directo de Convocatorias (OECE / SEACE)
+        </div>
+        <div class="live-search-desc">
+          Ingresa la palabra clave y el script de Python extraerá las convocatorias en tiempo real.
+        </div>
+      </div>
+      <div class="live-search-form">
+        <div class="live-search-input-wrap">
+          <span class="live-search-icon">🔎</span>
+          <input type="text" id="scraperKeywordInput" placeholder="Palabra clave: ej. tela, firewall, calzado, camionetas, laptop..." autocomplete="off">
+        </div>
+        <select class="custom-select" id="scraperYearSelect" style="min-width: 140px;">
+          <option value="2026" selected>Año 2026</option>
+          <option value="2025">Año 2025</option>
+          <option value="2024">Año 2024</option>
+          <option value="ALL">Todos los Años</option>
+        </select>
+        <button class="btn-scraper" id="btnEjecutarScraper">
+          <span>⚡</span> Ejecutar Scraper
+        </button>
+      </div>
+      <div class="scraper-status" id="scraperStatus">
+        <div class="spinner"></div>
+        <span id="scraperStatusText">Consultando API OECE...</span>
+      </div>
+    </section>
+
     <!-- KPI STATS CARDS -->
     <section class="stats-grid" id="statsGrid">
       <div class="stat-card" style="--stat-accent: var(--cyan);">
@@ -774,17 +948,8 @@
     <span id="toastMsg">Enlace copiado al portapapeles</span>
   </div>
 
-  <!-- Carga de datos pre-exportados por el scraper (si existe) -->
-  <script>
-fetch('contrataciones_oece_clean.json')
-  .then(r => r.json())
-  .then(data => {
-    window.CONTRATACIONES_DATA = data;
-    // After loading data, initialize the app (if init function exists)
-    if (typeof initApp === 'function') initApp();
-  })
-  .catch(err => console.error('Error loading JSON:', err));
-</script>
+  <!-- Carga de datos pre-exportados por el scraper (archivo JS local) -->
+  <script src="contrataciones_data.js"></script>
 
   <script>
     // ESTADO DE LA APLICACIÓN
@@ -795,7 +960,14 @@ fetch('contrataciones_oece_clean.json')
     let searchQuery = '';
     let activeSort = 'date_desc';
 
-    // ELEMENTOS DOM
+    // ELEMENTOS DOM - BUSCADOR SCRAPER EN VIVO
+    const scraperKeywordInput = document.getElementById('scraperKeywordInput');
+    const scraperYearSelect = document.getElementById('scraperYearSelect');
+    const btnEjecutarScraper = document.getElementById('btnEjecutarScraper');
+    const scraperStatus = document.getElementById('scraperStatus');
+    const scraperStatusText = document.getElementById('scraperStatusText');
+
+    // ELEMENTOS DOM - CONTROLES Y GRILLA
     const cardsGrid = document.getElementById('cardsGrid');
     const searchInput = document.getElementById('searchInput');
     const yearSelect = document.getElementById('yearSelect');
@@ -816,23 +988,80 @@ fetch('contrataciones_oece_clean.json')
     const kpiEntidades = document.getElementById('kpiEntidades');
     const kpiAnio = document.getElementById('kpiAnio');
 
+    // FUNCIÓN: EJECUTAR BÚSQUEDA DEL SCRAPER EN VIVO
+    async function ejecutarBusquedaScraper() {
+      const keyword = scraperKeywordInput.value.trim();
+      if (!keyword) {
+        scraperKeywordInput.focus();
+        showToast("Por favor ingresa una palabra clave para buscar", "⚠️");
+        return;
+      }
+
+      const anioSeleccionado = scraperYearSelect.value;
+      
+      // Mostrar estado de carga y deshabilitar botón
+      btnEjecutarScraper.disabled = true;
+      btnEjecutarScraper.innerHTML = '<span>⏳</span> Buscando...';
+      scraperStatus.className = 'scraper-status loading';
+      scraperStatusText.textContent = `Extrayendo convocatorias de OECE para "${keyword}"... Esto puede tardar unos segundos.`;
+
+      try {
+        const baseUrl = window.location.origin.startsWith('http') ? window.location.origin : 'http://localhost:8000';
+        const url = `${baseUrl}/api/buscar?q=${encodeURIComponent(keyword)}&anio=${encodeURIComponent(anioSeleccionado)}`;
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+          throw new Error(`El servidor respondió con código ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (Array.isArray(data)) {
+          cargarDatos(data);
+          scraperStatus.style.display = 'none';
+          if (data.length > 0) {
+            showToast(`¡Búsqueda exitosa! ${data.length} procesos encontrados para "${keyword}"`, "✅");
+          } else {
+            showToast(`No se encontraron convocatorias para "${keyword}" en el año ${anioSeleccionado}`, "ℹ️");
+          }
+        } else {
+          throw new Error("El formato de respuesta no es válido.");
+        }
+      } catch (err) {
+        console.error("Error al ejecutar scraper:", err);
+        scraperStatus.className = 'scraper-status error';
+        scraperStatusText.innerHTML = `⚠️ No se pudo conectar al servidor local. Recuerda iniciar <b>iniciar.bat</b> o ejecutar <code>python servidor.py</code> en la terminal.`;
+        showToast("Error de conexión con el script de Python", "❌");
+      } finally {
+        btnEjecutarScraper.disabled = false;
+        btnEjecutarScraper.innerHTML = '<span>⚡</span> Ejecutar Scraper';
+      }
+    }
+
     // INICIALIZACIÓN
     window.addEventListener('DOMContentLoaded', () => {
-      // 1. Intentar cargar datos desde contrataciones_data.js (variable window.CONTRATACIONES_DATA)
+      // 1. Cargar datos iniciales existentes si están en window.CONTRATACIONES_DATA
       if (window.CONTRATACIONES_DATA && Array.isArray(window.CONTRATACIONES_DATA) && window.CONTRATACIONES_DATA.length > 0) {
         cargarDatos(window.CONTRATACIONES_DATA);
       } else {
-        // 2. Si no está en window, intentar cargar contrataciones_oece.json por fetch
+        // 2. Si no están en window, intentar cargar contrataciones_oece.json por fetch
         fetch('contrataciones_oece.json')
           .then(res => res.json())
           .then(data => cargarDatos(data))
           .catch(() => {
-            // 3. Fallback con muestra ilustrativa si aún no ha corrido el script
-            mostrarEstadoVacio("No se cargaron datos automáticamente. Haz clic en 'Cargar JSON' o ejecuta 'python scraper_oece.py' en tu terminal.");
+            mostrarEstadoVacio("Escribe una palabra clave en el buscador superior y presiona 'Ejecutar Scraper' para consultar en tiempo real.");
           });
       }
 
-      // Eventos de controles
+      // Conectar eventos del buscador de scraper en vivo
+      btnEjecutarScraper.addEventListener('click', ejecutarBusquedaScraper);
+      scraperKeywordInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          ejecutarBusquedaScraper();
+        }
+      });
+
+      // Eventos de controles de filtrado local
       searchInput.addEventListener('input', (e) => {
         searchQuery = e.target.value.toLowerCase().trim();
         render();

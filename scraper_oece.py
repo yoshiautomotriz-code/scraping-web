@@ -284,7 +284,7 @@ if __name__ == "__main__":
     # Realizar búsqueda (puedes ajustar el límite por palabra o el año)
     resultados = buscar_contrataciones(
         palabras_clave=palabras,
-        anio=None,  # Puedes poner 2026, 2025 o None para todos los años
+        anio=datetime.now().year,  # Filtrando por año actual
         limite_por_palabra=50
     )
     
