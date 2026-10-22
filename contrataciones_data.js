@@ -1,48 +1,6 @@
 /** Datos pre-cargados para el visualizador HTML **/
 window.CONTRATACIONES_DATA = [
   {
-    "ocid": "ocds-dgv273-seacev3-2026-2341-8",
-    "id_licitacion": "1199789",
-    "titulo": "CP-ABR-3-2026-COFIDE-1",
-    "descripcion": "SERVICIO ANTISPAM EN NUBE",
-    "entidad": "CORPORACION FINANCIERA DE DESARROLLO S.A.",
-    "entidad_codigo": "PE-CONSUCODE-2341",
-    "monto": 375000.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 375,000.00",
-    "metodo": "Concurso Público Abreviado",
-    "categoria": "services",
-    "fecha_publicacion": "14/05/2026",
-    "anio": 2026,
-    "mes": "05",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-2026-2341-8",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-78093",
-    "id_licitacion": "78093",
-    "titulo": "AMC-CLASICO-2-2015-SUNASS-1",
-    "descripcion": "Adquisicion de solucion de antivirus - antispam",
-    "entidad": "SUPERINTENDENCIA NACIONAL DE SERVICIOS DE SANEAMIENTO",
-    "entidad_codigo": "PE-CONSUCODE-1923",
-    "monto": 21918.94,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 21,918.94",
-    "metodo": "Adjudicación de Menor Cuantía",
-    "categoria": "goods",
-    "fecha_publicacion": "25/09/2026",
-    "anio": 2026,
-    "mes": "09",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-78093",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
     "ocid": "ocds-dgv273-seacev3-2025-2409-246",
     "id_licitacion": "1154674",
     "titulo": "LP-SM-9-2025-SEAL-1",
@@ -82,27 +40,6 @@ window.CONTRATACIONES_DATA = [
     "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-1172249",
     "palabras_clave": [
       "firewall"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-2025-10231-28",
-    "id_licitacion": "1104335",
-    "titulo": "AS-SM-4-2025-MTC/21-1",
-    "descripcion": "ADQUISICIÓN DE  LICENCIA DE SOFTWARE ANTISPAM",
-    "entidad": "MTC-PROYECTO ESPECIAL DE INFRAESTRUCTURA DE TRANSPORTE DESCENTRALIZADO - PROVIAS DESCENTRALIZADO",
-    "entidad_codigo": "PE-CONSUCODE-10231",
-    "monto": 172000.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 172,000.00",
-    "metodo": "Adjudicación Simplificada",
-    "categoria": "goods",
-    "fecha_publicacion": "10/05/2025",
-    "anio": 2025,
-    "mes": "05",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-2025-10231-28",
-    "palabras_clave": [
-      "antispam"
     ]
   },
   {
@@ -190,27 +127,6 @@ window.CONTRATACIONES_DATA = [
     ]
   },
   {
-    "ocid": "ocds-dgv273-seacev3-139921",
-    "id_licitacion": "139921",
-    "titulo": "CONV-PROC-7-2015-CGR-BID-LPN-1",
-    "descripcion": "Adquisición de AntiSpam para la CGR",
-    "entidad": "CONTRALORIA GENERAL DE LA REPUBLICA",
-    "entidad_codigo": "PE-CONSUCODE-8",
-    "monto": 297290.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 297,290.00",
-    "metodo": "Convenio",
-    "categoria": "goods",
-    "fecha_publicacion": "17/03/2024",
-    "anio": 2024,
-    "mes": "03",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-139921",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
     "ocid": "ocds-dgv273-seacev3-301942",
     "id_licitacion": "301942",
     "titulo": "AS-SM-9-2016--DINI-1",
@@ -250,90 +166,6 @@ window.CONTRATACIONES_DATA = [
     "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-298763",
     "palabras_clave": [
       "firewall"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-2022-2341-41",
-    "id_licitacion": "853778",
-    "titulo": "AS-SM-34-2022-COFIDE-1",
-    "descripcion": "SERVICIO DE ANTISPAM EN NUBE",
-    "entidad": "CORPORACION FINANCIERA DE DESARROLLO S.A.",
-    "entidad_codigo": "PE-CONSUCODE-2341",
-    "monto": 127000.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 127,000.00",
-    "metodo": "Adjudicación Simplificada",
-    "categoria": "services",
-    "fecha_publicacion": "31/05/2024",
-    "anio": 2024,
-    "mes": "05",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-2022-2341-41",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-2024-2418-40",
-    "id_licitacion": "1020662",
-    "titulo": "AS-SM-20-2024-CORPAC S.A.-1",
-    "descripcion": "SUSCRIPCION DE LICENCIAS DE ANTISPAM",
-    "entidad": "CORPORACION PERUANA DE AEROPUERTOS Y AVIACION COMERCIAL S.A.- CORPAC",
-    "entidad_codigo": "PE-CONSUCODE-2418",
-    "monto": 178500.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 178,500.00",
-    "metodo": "Adjudicación Simplificada",
-    "categoria": "services",
-    "fecha_publicacion": "11/08/2024",
-    "anio": 2024,
-    "mes": "08",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-2024-2418-40",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-1051734",
-    "id_licitacion": "1051734",
-    "titulo": "AS-SM-17-2024-JNE-1",
-    "descripcion": "SERVICIO DE RENOVACION DE LICENCIA ANTISPAM",
-    "entidad": "JURADO NACIONAL DE ELECCIONES",
-    "entidad_codigo": "PE-CONSUCODE-10",
-    "monto": 109000.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 109,000.00",
-    "metodo": "Adjudicación Simplificada",
-    "categoria": "services",
-    "fecha_publicacion": "25/10/2024",
-    "anio": 2024,
-    "mes": "10",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-1051734",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-2024-10231-25",
-    "id_licitacion": "997225",
-    "titulo": "AS-SM-1-2024-MTC/21-1",
-    "descripcion": "Adquisición de licencia de SOFTWARE ANTISPAM",
-    "entidad": "MTC-PROYECTO ESPECIAL DE INFRAESTRUCTURA DE TRANSPORTE DESCENTRALIZADO - PROVIAS DESCENTRALIZADO",
-    "entidad_codigo": "PE-CONSUCODE-10231",
-    "monto": 0.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 0.00",
-    "metodo": "Adjudicación Simplificada",
-    "categoria": "goods",
-    "fecha_publicacion": "26/03/2024",
-    "anio": 2024,
-    "mes": "03",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-2024-10231-25",
-    "palabras_clave": [
-      "antispam"
     ]
   },
   {
@@ -400,27 +232,6 @@ window.CONTRATACIONES_DATA = [
     ]
   },
   {
-    "ocid": "ocds-dgv273-seacev3-112142",
-    "id_licitacion": "112142",
-    "titulo": "AMC-CLASICO-52-2015-CEP/MSI-1",
-    "descripcion": "ADQUISICION DE 01 LICENCIA ANTISPAM",
-    "entidad": "MUNICIPALIDAD DISTRITAL DE SAN ISIDRO - LIMA",
-    "entidad_codigo": "PE-CONSUCODE-1337",
-    "monto": 21181.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 21,181.00",
-    "metodo": "Adjudicación de Menor Cuantía",
-    "categoria": "goods",
-    "fecha_publicacion": "08/12/2023",
-    "anio": 2023,
-    "mes": "12",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-112142",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
     "ocid": "ocds-dgv273-seacev3-755679",
     "id_licitacion": "755679",
     "titulo": "AS-SM-49-2020-ES-2",
@@ -439,90 +250,6 @@ window.CONTRATACIONES_DATA = [
     "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-755679",
     "palabras_clave": [
       "firewall"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-2021-2341-27",
-    "id_licitacion": "745111",
-    "titulo": "AS-SM-33-2021-COFIDE-1",
-    "descripcion": "Servicio Antispam en Nube",
-    "entidad": "CORPORACION FINANCIERA DE DESARROLLO S.A.",
-    "entidad_codigo": "PE-CONSUCODE-2341",
-    "monto": 160800.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 160,800.00",
-    "metodo": "Adjudicación Simplificada",
-    "categoria": "services",
-    "fecha_publicacion": "01/10/2021",
-    "anio": 2021,
-    "mes": "10",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-2021-2341-27",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-2021-10001-69",
-    "id_licitacion": "731162",
-    "titulo": "AS-SM-15-2021-PROINVERSION-1",
-    "descripcion": "SERVICIO DE ANTISPAM EN LA NUBE",
-    "entidad": "AGENCIA DE PROMOCION DE LA INVERSION PRIVADA - PROINVERSION",
-    "entidad_codigo": "PE-CONSUCODE-10001",
-    "monto": 254000.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 254,000.00",
-    "metodo": "Adjudicación Simplificada",
-    "categoria": "services",
-    "fecha_publicacion": "01/08/2021",
-    "anio": 2021,
-    "mes": "08",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-2021-10001-69",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-2020-200560-26",
-    "id_licitacion": "640289",
-    "titulo": "LP-SM-1-2020-MIGRACIONES-1",
-    "descripcion": "ADQUISICION DE EQUIPAMIENTO DE SEGURIDAD ANTISPAM",
-    "entidad": "SUPERINTENDENCIA NACIONAL DE MIGRACIONES",
-    "entidad_codigo": "PE-CONSUCODE-200560",
-    "monto": 1109373.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 1,109,373.00",
-    "metodo": "Licitación Pública",
-    "categoria": "goods",
-    "fecha_publicacion": "01/08/2020",
-    "anio": 2020,
-    "mes": "08",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-2020-200560-26",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-2020-10001-16",
-    "id_licitacion": "651317",
-    "titulo": "AS-SM-8-2020-PROINVERSION-1",
-    "descripcion": "SERVICIO DE IMPLEMENTACION DE SOLUCION ANTISPAM",
-    "entidad": "AGENCIA DE PROMOCION DE LA INVERSION PRIVADA - PROINVERSION",
-    "entidad_codigo": "PE-CONSUCODE-10001",
-    "monto": 209793.69,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 209,793.69",
-    "metodo": "Adjudicación Simplificada",
-    "categoria": "services",
-    "fecha_publicacion": "01/09/2020",
-    "anio": 2020,
-    "mes": "09",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-2020-10001-16",
-    "palabras_clave": [
-      "antispam"
     ]
   },
   {
@@ -631,48 +358,6 @@ window.CONTRATACIONES_DATA = [
     ]
   },
   {
-    "ocid": "ocds-dgv273-seacev3-2020-2341-59",
-    "id_licitacion": "666038",
-    "titulo": "AS-SM-35-2020-COFIDE-1",
-    "descripcion": "Servicio antispam en nube",
-    "entidad": "CORPORACION FINANCIERA DE DESARROLLO S.A.",
-    "entidad_codigo": "PE-CONSUCODE-2341",
-    "monto": 134000.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 134,000.00",
-    "metodo": "Adjudicación Simplificada",
-    "categoria": "services",
-    "fecha_publicacion": "01/11/2020",
-    "anio": 2020,
-    "mes": "11",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-2020-2341-59",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-2020-200019-734",
-    "id_licitacion": "659153",
-    "titulo": "AS-SM-33-2020-MTC/20-1",
-    "descripcion": "ADQUISICION DE APPLIANCE ANTISPAM",
-    "entidad": "MTC-PROYECTO ESPECIAL DE INFRAESTRUCTURA DE TRANSPORTE NACIONAL (PROVIAS NACIONAL)",
-    "entidad_codigo": "PE-CONSUCODE-200019",
-    "monto": 399500.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 399,500.00",
-    "metodo": "Adjudicación Simplificada",
-    "categoria": "goods",
-    "fecha_publicacion": "01/10/2020",
-    "anio": 2020,
-    "mes": "10",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-2020-200019-734",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
     "ocid": "ocds-dgv273-seacev3-2020-2341-19",
     "id_licitacion": "655893",
     "titulo": "AS-SM-27-2020-COFIDE-1",
@@ -691,48 +376,6 @@ window.CONTRATACIONES_DATA = [
     "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-2020-2341-19",
     "palabras_clave": [
       "firewall"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-2019-2341-77",
-    "id_licitacion": "573097",
-    "titulo": "AS-SM-28-2019-COFIDE-1",
-    "descripcion": "Servicio Antispam en Nube",
-    "entidad": "CORPORACION FINANCIERA DE DESARROLLO S.A.",
-    "entidad_codigo": "PE-CONSUCODE-2341",
-    "monto": 126137.45,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 126,137.45",
-    "metodo": "Adjudicación Simplificada",
-    "categoria": "services",
-    "fecha_publicacion": "01/10/2019",
-    "anio": 2019,
-    "mes": "10",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-2019-2341-77",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-2019-1962-69",
-    "id_licitacion": "510304",
-    "titulo": "AS-SM-2-2019-INGEMMET/CS-1",
-    "descripcion": "ADQUISICION DE SOLUCION ANTISPAM",
-    "entidad": "INSTITUTO GEOLOGICO, MINERO Y METALURGICO",
-    "entidad_codigo": "PE-CONSUCODE-1962",
-    "monto": 65250.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 65,250.00",
-    "metodo": "Adjudicación Simplificada",
-    "categoria": "goods",
-    "fecha_publicacion": "01/02/2019",
-    "anio": 2019,
-    "mes": "02",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-2019-1962-69",
-    "palabras_clave": [
-      "antispam"
     ]
   },
   {
@@ -775,153 +418,6 @@ window.CONTRATACIONES_DATA = [
     "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-2017-2341-25",
     "palabras_clave": [
       "firewall"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-2017-1921-219",
-    "id_licitacion": "423031",
-    "titulo": "AS-SM-104-2017-OSINERGMIN-1",
-    "descripcion": "ADQUISICION DE SOLUCION ANTISPAM CORPORATIVA",
-    "entidad": "ORGANISMO SUPERVISOR DE LA INVERSION EN ENERGIA Y MINERIA",
-    "entidad_codigo": "PE-CONSUCODE-1921",
-    "monto": 218000.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 218,000.00",
-    "metodo": "Adjudicación Simplificada",
-    "categoria": "goods",
-    "fecha_publicacion": "01/12/2017",
-    "anio": 2017,
-    "mes": "12",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-2017-1921-219",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-287401",
-    "id_licitacion": "287401",
-    "titulo": "AS-SM-16-2016-MTC/21-1",
-    "descripcion": "ANTISPAM",
-    "entidad": "MTC-PROYECTO ESPECIAL DE INFRAESTRUCTURA DE TRANSPORTE DESCENTRALIZADO - PROVIAS DESCENTRALIZADO",
-    "entidad_codigo": "PE-CONSUCODE-10231",
-    "monto": 165200.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 165,200.00",
-    "metodo": "Adjudicación Simplificada",
-    "categoria": "goods",
-    "fecha_publicacion": "01/08/2016",
-    "anio": 2016,
-    "mes": "08",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-287401",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-201238",
-    "id_licitacion": "201238",
-    "titulo": "AMC-CLASICO-57-2015-MEM-1",
-    "descripcion": "SERVICIO DE PROTECCION ANTISPAM",
-    "entidad": "MINISTERIO DE ENERGIA Y MINAS",
-    "entidad_codigo": "PE-CONSUCODE-15",
-    "monto": 30000.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 30,000.00",
-    "metodo": "Adjudicación de Menor Cuantía",
-    "categoria": "services",
-    "fecha_publicacion": "01/11/2015",
-    "anio": 2015,
-    "mes": "11",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-201238",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-97966",
-    "id_licitacion": "97966",
-    "titulo": "AMC-CLASICO-52-2015-CEP/MSI-1",
-    "descripcion": "ADQUISICION DE 01 LICENCIA ANTISPAM",
-    "entidad": "MUNICIPALIDAD DISTRITAL DE SAN ISIDRO - LIMA",
-    "entidad_codigo": "PE-CONSUCODE-1337",
-    "monto": 21181.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 21,181.00",
-    "metodo": "Adjudicación de Menor Cuantía",
-    "categoria": "goods",
-    "fecha_publicacion": "01/04/2015",
-    "anio": 2015,
-    "mes": "04",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-97966",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-118538",
-    "id_licitacion": "118538",
-    "titulo": "ADS-CLASICO-30-2015-ESSALUD/GCL-1",
-    "descripcion": "ADQUISICION DE UN APPLIANCE ANTISPAM",
-    "entidad": "SEGURO SOCIAL DE  SALUD",
-    "entidad_codigo": "PE-CONSUCODE-2543",
-    "monto": 158812.65,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 158,812.65",
-    "metodo": "Adjudicación Directa Selectiva",
-    "categoria": "goods",
-    "fecha_publicacion": "01/06/2015",
-    "anio": 2015,
-    "mes": "06",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-118538",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-6229",
-    "id_licitacion": "6229",
-    "titulo": "AMC-CLASICO-3-2014-SUNASS-1",
-    "descripcion": "Adquisici¢n solucion de Antivirus - Antispam",
-    "entidad": "SUPERINTENDENCIA NACIONAL DE SERVICIOS DE SANEAMIENTO",
-    "entidad_codigo": "PE-CONSUCODE-1923",
-    "monto": 22312.5,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 22,312.50",
-    "metodo": "Adjudicación de Menor Cuantía",
-    "categoria": "goods",
-    "fecha_publicacion": "01/02/2014",
-    "anio": 2014,
-    "mes": "02",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-6229",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev3-69125",
-    "id_licitacion": "69125",
-    "titulo": "AMC-CLASICO-114-2014-SENASA-1",
-    "descripcion": "ADQUISICION DE EQUIPO ANTISPAM",
-    "entidad": "SERVICIO NACIONAL DE SANIDAD AGRARIA",
-    "entidad_codigo": "PE-CONSUCODE-1995",
-    "monto": 39695.2,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 39,695.20",
-    "metodo": "Adjudicación de Menor Cuantía",
-    "categoria": "goods",
-    "fecha_publicacion": "01/12/2014",
-    "anio": 2014,
-    "mes": "12",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 3",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev3-69125",
-    "palabras_clave": [
-      "antispam"
     ]
   },
   {
@@ -1051,69 +547,6 @@ window.CONTRATACIONES_DATA = [
     ]
   },
   {
-    "ocid": "ocds-dgv273-seacev2-2954523",
-    "id_licitacion": "2954523",
-    "titulo": "AMC-126-2013-SUNAT/4G0000",
-    "descripcion": "PROVISION DE SOLUCION ANTISPAM",
-    "entidad": "SUPERINTENDENCIA NACIONAL DE ADUANAS Y DE ADMINISTRACION TRIBUTARIA - SUNAT",
-    "entidad_codigo": "PE-CONSUCODE-2000",
-    "monto": 427574.9,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 427,574.90",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/12/2013",
-    "anio": 2013,
-    "mes": "12",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-2954523",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-2726159",
-    "id_licitacion": "2726159",
-    "titulo": "AMC-126-2013-SUNAT/4G0000",
-    "descripcion": "PROVISION DE SOLUCION ANTISPAM",
-    "entidad": "SUPERINTENDENCIA NACIONAL DE ADUANAS Y DE ADMINISTRACION TRIBUTARIA - SUNAT",
-    "entidad_codigo": "PE-CONSUCODE-2000",
-    "monto": 457642.8,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 457,642.80",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/07/2013",
-    "anio": 2013,
-    "mes": "07",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-2726159",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-2518160",
-    "id_licitacion": "2518160",
-    "titulo": "AMC-1-2013-SUNASS",
-    "descripcion": "Adquisicion solucion de Antivirus - Antispam",
-    "entidad": "SUPERINTENDENCIA NACIONAL DE SERVICIOS DE SANEAMIENTO",
-    "entidad_codigo": "PE-CONSUCODE-1923",
-    "monto": 22217.34,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 22,217.34",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/03/2013",
-    "anio": 2013,
-    "mes": "03",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-2518160",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
     "ocid": "ocds-dgv273-seacev2-2969807",
     "id_licitacion": "2969807",
     "titulo": "ADS-11-2013-CORPAC S.A.",
@@ -1156,48 +589,6 @@ window.CONTRATACIONES_DATA = [
     ]
   },
   {
-    "ocid": "ocds-dgv273-seacev2-2423821",
-    "id_licitacion": "2423821",
-    "titulo": "AMC-52-2012-SAT",
-    "descripcion": "SERVICIO DE SOPORTE Y MANTENIMIENTO ANTISPAM",
-    "entidad": "SERVICIO DE ADMINISTRACION TRIBUTARIA DE LIMA",
-    "entidad_codigo": "PE-CONSUCODE-2005",
-    "monto": 24535.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 24,535.00",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "services",
-    "fecha_publicacion": "01/12/2012",
-    "anio": 2012,
-    "mes": "12",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-2423821",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-2437689",
-    "id_licitacion": "2437689",
-    "titulo": "AMC-20-2012-INDECI/12.0",
-    "descripcion": "ADQUISICION DE LICENCIA DE SOFTWARE ANTISPAM",
-    "entidad": "INSTITUTO NACIONAL DE DEFENSA CIVIL",
-    "entidad_codigo": "PE-CONSUCODE-1967",
-    "monto": 24500.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 24,500.00",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/12/2012",
-    "anio": 2012,
-    "mes": "12",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-2437689",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
     "ocid": "ocds-dgv273-seacev2-2158997",
     "id_licitacion": "2158997",
     "titulo": "ADS-6-2012-BNP",
@@ -1216,69 +607,6 @@ window.CONTRATACIONES_DATA = [
     "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-2158997",
     "palabras_clave": [
       "firewall"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-1890884",
-    "id_licitacion": "1890884",
-    "titulo": "AMC-28-2011-SUNASS",
-    "descripcion": "ADQUISICION DE SOLUCION DE ANTIVIRUS-ANTISPAM",
-    "entidad": "SUPERINTENDENCIA NACIONAL DE SERVICIOS DE SANEAMIENTO",
-    "entidad_codigo": "PE-CONSUCODE-1923",
-    "monto": 21099.71,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 21,099.71",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/12/2011",
-    "anio": 2011,
-    "mes": "12",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-1890884",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-1748202",
-    "id_licitacion": "1748202",
-    "titulo": "AMC-279-2011-CORPAC S.A.",
-    "descripcion": "Mantenimiento Licencias  Antispam",
-    "entidad": "CORPORACION PERUANA DE AEROPUERTOS Y AVIACION COMERCIAL S.A.- CORPAC",
-    "entidad_codigo": "PE-CONSUCODE-2418",
-    "monto": 56000.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 56,000.00",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "services",
-    "fecha_publicacion": "01/06/2011",
-    "anio": 2011,
-    "mes": "06",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-1748202",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-1830547",
-    "id_licitacion": "1830547",
-    "titulo": "AMC-11-2011-INDECI/12.0",
-    "descripcion": "Adquision de Equipo Antispam",
-    "entidad": "INSTITUTO NACIONAL DE DEFENSA CIVIL",
-    "entidad_codigo": "PE-CONSUCODE-1967",
-    "monto": 28000.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 28,000.00",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/11/2011",
-    "anio": 2011,
-    "mes": "11",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-1830547",
-    "palabras_clave": [
-      "antispam"
     ]
   },
   {
@@ -1303,27 +631,6 @@ window.CONTRATACIONES_DATA = [
     ]
   },
   {
-    "ocid": "ocds-dgv273-seacev2-1534962",
-    "id_licitacion": "1534962",
-    "titulo": "EXO-3-2010-INDECI/12.0",
-    "descripcion": "Adquisición de Licencia AntiSpam",
-    "entidad": "INSTITUTO NACIONAL DE DEFENSA CIVIL",
-    "entidad_codigo": "PE-CONSUCODE-1967",
-    "monto": 29000.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 29,000.00",
-    "metodo": "EXONERACIONES",
-    "categoria": "goods",
-    "fecha_publicacion": "01/05/2010",
-    "anio": 2010,
-    "mes": "05",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-1534962",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
     "ocid": "ocds-dgv273-seacev2-1594087",
     "id_licitacion": "1594087",
     "titulo": "CONV-13-2010-PCM-PMDE-CP",
@@ -1342,69 +649,6 @@ window.CONTRATACIONES_DATA = [
     "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-1594087",
     "palabras_clave": [
       "firewall"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-1485887",
-    "id_licitacion": "1485887",
-    "titulo": "AMC-5-2010-FONAFE",
-    "descripcion": "EQUIPO ANTISPAM - NUEVO HARDWARE",
-    "entidad": "FONDO NACIONAL DE FINANCIAMIENTO DE LA ACTIVIDAD EMPRESARIAL - FONAFE",
-    "entidad_codigo": "PE-CONSUCODE-20008",
-    "monto": 20110.05,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 20,110.05",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/01/2010",
-    "anio": 2010,
-    "mes": "01",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-1485887",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-1587766",
-    "id_licitacion": "1587766",
-    "titulo": "AMC-20-2010-IPEN",
-    "descripcion": "LICENCIAS DE SOFTWARE ANTIVIRUS Y ANTISPAM",
-    "entidad": "INSTITUTO PERUANO DE ENERGIA NUCLEAR",
-    "entidad_codigo": "PE-CONSUCODE-1981",
-    "monto": 18664.93,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 18,664.93",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/08/2010",
-    "anio": 2010,
-    "mes": "08",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-1587766",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-1657197",
-    "id_licitacion": "1657197",
-    "titulo": "AMC-18-2010-SUNASS",
-    "descripcion": "Solucion de Antivirus Antispam Integrado",
-    "entidad": "SUPERINTENDENCIA NACIONAL DE SERVICIOS DE SANEAMIENTO",
-    "entidad_codigo": "PE-CONSUCODE-1923",
-    "monto": 30000.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 30,000.00",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/11/2010",
-    "anio": 2010,
-    "mes": "11",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-1657197",
-    "palabras_clave": [
-      "antispam"
     ]
   },
   {
@@ -1429,48 +673,6 @@ window.CONTRATACIONES_DATA = [
     ]
   },
   {
-    "ocid": "ocds-dgv273-seacev2-1484995",
-    "id_licitacion": "1484995",
-    "titulo": "ADS-14-2010-ESSALUD/GCL",
-    "descripcion": "Adquisicion de un antispam",
-    "entidad": "SEGURO SOCIAL DE  SALUD",
-    "entidad_codigo": "PE-CONSUCODE-2543",
-    "monto": 310000.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 310,000.00",
-    "metodo": "ADJUDICACION DIRECTA SELECTIVA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/01/2010",
-    "anio": 2010,
-    "mes": "01",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-1484995",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-1455651",
-    "id_licitacion": "1455651",
-    "titulo": "AMC-97-2009-DL-BN",
-    "descripcion": "ADQUISICION DE APPLIANCE ANTISPAM",
-    "entidad": "BANCO DE LA NACION",
-    "entidad_codigo": "PE-CONSUCODE-2525",
-    "monto": 23604.73,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 23,604.73",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/11/2009",
-    "anio": 2009,
-    "mes": "11",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-1455651",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
     "ocid": "ocds-dgv273-seacev2-1362083",
     "id_licitacion": "1362083",
     "titulo": "AMC-74-2009-MINSA",
@@ -1489,48 +691,6 @@ window.CONTRATACIONES_DATA = [
     "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-1362083",
     "palabras_clave": [
       "firewall"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-1420721",
-    "id_licitacion": "1420721",
-    "titulo": "AMC-56-2009-JNE",
-    "descripcion": "Adquisicion de Hardware Antispam",
-    "entidad": "JURADO NACIONAL DE ELECCIONES",
-    "entidad_codigo": "PE-CONSUCODE-10",
-    "monto": 33736.5,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 33,736.50",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/10/2009",
-    "anio": 2009,
-    "mes": "10",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-1420721",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-1418743",
-    "id_licitacion": "1418743",
-    "titulo": "AMC-48-2009-SIMAC",
-    "descripcion": "ADQUISICION SOFTWARE ANTISPAM",
-    "entidad": "SERVICIO INDUSTRIAL DE LA MARINA S.A.",
-    "entidad_codigo": "PE-CONSUCODE-2439",
-    "monto": 6240.0,
-    "moneda": "USD",
-    "monto_formateado": "US$ 6,240.00",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/10/2009",
-    "anio": 2009,
-    "mes": "10",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-1418743",
-    "palabras_clave": [
-      "antispam"
     ]
   },
   {
@@ -1639,27 +799,6 @@ window.CONTRATACIONES_DATA = [
     ]
   },
   {
-    "ocid": "ocds-dgv273-seacev2-947763",
-    "id_licitacion": "947763",
-    "titulo": "AMC-41-2008-DA-BN",
-    "descripcion": "Adquisicion de Filtro Antispam",
-    "entidad": "BANCO DE LA NACION",
-    "entidad_codigo": "PE-CONSUCODE-2525",
-    "monto": 36160.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 36,160.00",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/05/2008",
-    "anio": 2008,
-    "mes": "05",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-947763",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
     "ocid": "ocds-dgv273-seacev2-1140691",
     "id_licitacion": "1140691",
     "titulo": "AMC-35-2008-IGP",
@@ -1681,48 +820,6 @@ window.CONTRATACIONES_DATA = [
     ]
   },
   {
-    "ocid": "ocds-dgv273-seacev2-1053496",
-    "id_licitacion": "1053496",
-    "titulo": "AMC-29-2008-CONCYTEC",
-    "descripcion": "ADQUISICION DE EQUIPOS ANTISPAM",
-    "entidad": "CONSEJO NACIONAL DE CIENCIA, TECNOLOGIA E INNOVACION TECNOLOGICA",
-    "entidad_codigo": "PE-CONSUCODE-1949",
-    "monto": 11251.26,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 11,251.26",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/07/2008",
-    "anio": 2008,
-    "mes": "07",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-1053496",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-1114257",
-    "id_licitacion": "1114257",
-    "titulo": "AMC-247-2008-SENASA",
-    "descripcion": "ADQUISICION DE EQUIPO ANTISPAM",
-    "entidad": "SERVICIO NACIONAL DE SANIDAD AGRARIA",
-    "entidad_codigo": "PE-CONSUCODE-1995",
-    "monto": 28600.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 28,600.00",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/09/2008",
-    "anio": 2008,
-    "mes": "09",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-1114257",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
     "ocid": "ocds-dgv273-seacev2-1054492",
     "id_licitacion": "1054492",
     "titulo": "AMC-140-2008-INICTEL-UNI",
@@ -1741,90 +838,6 @@ window.CONTRATACIONES_DATA = [
     "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-1054492",
     "palabras_clave": [
       "firewall"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-931539",
-    "id_licitacion": "931539",
-    "titulo": "ADS-2-2008-CORPAC S.A.",
-    "descripcion": "Actualización de Licencias del Equipo Antispam",
-    "entidad": "CORPORACION PERUANA DE AEROPUERTOS Y AVIACION COMERCIAL S.A.- CORPAC",
-    "entidad_codigo": "PE-CONSUCODE-2418",
-    "monto": 17850.0,
-    "moneda": "USD",
-    "monto_formateado": "US$ 17,850.00",
-    "metodo": "ADJUDICACION DIRECTA SELECTIVA",
-    "categoria": "No clasificado",
-    "fecha_publicacion": "01/03/2008",
-    "anio": 2008,
-    "mes": "03",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-931539",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-582704",
-    "id_licitacion": "582704",
-    "titulo": "AMC-74-2007-SENASA",
-    "descripcion": "EQUIPO ANTISPAM Y SUSCRIPCIÓN ANTISPAM Y ANTIVIRUS PARA 600 USUARIOS POR UN AÑO",
-    "entidad": "SERVICIO NACIONAL DE SANIDAD AGRARIA",
-    "entidad_codigo": "PE-CONSUCODE-1995",
-    "monto": 44500.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 44,500.00",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/04/2007",
-    "anio": 2007,
-    "mes": "04",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-582704",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-570809",
-    "id_licitacion": "570809",
-    "titulo": "AMC-74-2007-SENASA",
-    "descripcion": "EQUIPO ANTISPAM Y SUSCRIPCIÓN ANTISPAM Y ANTIVIRUS PARA 600 USUARIOS POR UN AÑO",
-    "entidad": "SERVICIO NACIONAL DE SANIDAD AGRARIA",
-    "entidad_codigo": "PE-CONSUCODE-1995",
-    "monto": 44500.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 44,500.00",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/03/2007",
-    "anio": 2007,
-    "mes": "03",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-570809",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-611141",
-    "id_licitacion": "611141",
-    "titulo": "AMC-63-2007-AGROBANCO",
-    "descripcion": "Adquisición de Software Antispam",
-    "entidad": "BANCO AGROPECUARIO",
-    "entidad_codigo": "PE-CONSUCODE-200027",
-    "monto": 7616.0,
-    "moneda": "USD",
-    "monto_formateado": "US$ 7,616.00",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/05/2007",
-    "anio": 2007,
-    "mes": "05",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-611141",
-    "palabras_clave": [
-      "antispam"
     ]
   },
   {
@@ -1888,27 +901,6 @@ window.CONTRATACIONES_DATA = [
     "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-540938",
     "palabras_clave": [
       "firewall"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-700469",
-    "id_licitacion": "700469",
-    "titulo": "AMC-17-2007-UNS",
-    "descripcion": "ADQUISICION DE ANTIVIRUS Y ANTISPAM",
-    "entidad": "UNIVERSIDAD NACIONAL DEL SANTA",
-    "entidad_codigo": "PE-CONSUCODE-1900",
-    "monto": 23690.4,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 23,690.40",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/09/2007",
-    "anio": 2007,
-    "mes": "09",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-700469",
-    "palabras_clave": [
-      "antispam"
     ]
   },
   {
@@ -2017,27 +1009,6 @@ window.CONTRATACIONES_DATA = [
     ]
   },
   {
-    "ocid": "ocds-dgv273-seacev2-515453",
-    "id_licitacion": "515453",
-    "titulo": "ADS-39-2006-CORPAC S.A.",
-    "descripcion": "Adquisición de equipo antispam.",
-    "entidad": "CORPORACION PERUANA DE AEROPUERTOS Y AVIACION COMERCIAL S.A.- CORPAC",
-    "entidad_codigo": "PE-CONSUCODE-2418",
-    "monto": 38000.0,
-    "moneda": "USD",
-    "monto_formateado": "US$ 38,000.00",
-    "metodo": "ADJUDICACION DIRECTA SELECTIVA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/12/2006",
-    "anio": 2006,
-    "mes": "12",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-515453",
-    "palabras_clave": [
-      "antispam"
-    ]
-  },
-  {
     "ocid": "ocds-dgv273-seacev2-192664",
     "id_licitacion": "192664",
     "titulo": "AMC-117-2005-SIMAC",
@@ -2056,27 +1027,6 @@ window.CONTRATACIONES_DATA = [
     "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-192664",
     "palabras_clave": [
       "firewall"
-    ]
-  },
-  {
-    "ocid": "ocds-dgv273-seacev2-136752",
-    "id_licitacion": "136752",
-    "titulo": "AMC-10-2005-UNS",
-    "descripcion": "ADQUISICION DE ANTIVIRUS e ANTISPAM",
-    "entidad": "UNIVERSIDAD NACIONAL DEL SANTA",
-    "entidad_codigo": "PE-CONSUCODE-1900",
-    "monto": 20000.0,
-    "moneda": "PEN",
-    "monto_formateado": "S/. 20,000.00",
-    "metodo": "MENOR CUANTIA",
-    "categoria": "goods",
-    "fecha_publicacion": "01/03/2005",
-    "anio": 2005,
-    "mes": "03",
-    "sistema": "Sistema Electrónico de Contrataciones del Estado - Versión 2",
-    "enlace_proceso": "https://contratacionesabiertas.oece.gob.pe/proceso/ocds-dgv273-seacev2-136752",
-    "palabras_clave": [
-      "antispam"
     ]
   },
   {

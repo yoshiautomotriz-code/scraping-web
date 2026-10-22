@@ -775,7 +775,16 @@
   </div>
 
   <!-- Carga de datos pre-exportados por el scraper (si existe) -->
-  <script src="contrataciones_data.js"></script>
+  <script>
+fetch('contrataciones_oece_clean.json')
+  .then(r => r.json())
+  .then(data => {
+    window.CONTRATACIONES_DATA = data;
+    // After loading data, initialize the app (if init function exists)
+    if (typeof initApp === 'function') initApp();
+  })
+  .catch(err => console.error('Error loading JSON:', err));
+</script>
 
   <script>
     // ESTADO DE LA APLICACIÓN
